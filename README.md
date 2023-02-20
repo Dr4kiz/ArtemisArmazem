@@ -8,4 +8,4 @@
 ## Dependências
 
 
-- [PlotSquared] - Necessário estar instalado para o funcionamento do plugin
+- [PlotSquared] - Necessário para o funcionamento do plugin
