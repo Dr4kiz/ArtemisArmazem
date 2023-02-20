@@ -1,0 +1,8 @@
+name: ArtemisArmazem
+version: '${version}'
+main: me.dkz.artemis.plugins.ArtemisArmazem
+softdepend:
+  - PlotSquared
+commands:
+  armazem:
+    aliases: ["storage"]

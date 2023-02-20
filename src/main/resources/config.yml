@@ -1,0 +1,29 @@
+ActionBar:
+  Ativo: true
+  Mensagem: "&b[Armazem] &e@quatindadex @item adicionados ao armazem"
+
+Itens:
+  CACTUS:
+    Nome: "&aCacto"
+    Desc:
+      - "&7Quantidade: &e@quantia"
+      - ""
+      - " &7Esquerdo: &eColetar todos"
+      - " &7Direito: &eColetar 1"
+      - " &7Esquerdo + SHIFT: &eColetar 64"
+  MELON:
+    Nome: "&6Melancia"
+    Desc:
+      - "&7Quantidade: &e@quantia"
+      - ""
+      - " &7Esquerdo: &eColetar todos"
+      - " &7Direito: &eColetar 1"
+      - " &7Esquerdo + SHIFT: &eColetar 64"
+
+Mensagens:
+  InvLotado: '&cO inventário está lotado, esvazie-o para continuar.'
+  Coletado: '&aVocê coletou &e@quantia &ade &e@item&a.'
+  Vazio: '&cVocê não tem nada para coletar.'
+  NaoMembro: '&cVocê não é membro dessa plot.'
+  NaoPlot: '&cVocê não está em uma plot.'
+  SemPermicao: '&cVocê não tem permissão para usar esse comando.'
