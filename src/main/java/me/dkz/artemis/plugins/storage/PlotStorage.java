@@ -13,7 +13,6 @@ import java.util.UUID;
 public class PlotStorage {
 
     private final ArtemisArmazem plugin = ArtemisArmazem.getInstance();
-    private final PlotAPI plotAPI = plugin.getPlotAPI();
     private final SQLite sqLite = plugin.getSQLite();
 
     private final HashMap<Player, Integer> actionBarMessage = new HashMap<>();
@@ -49,7 +48,6 @@ public class PlotStorage {
 
 
     public PlotItem getPlotItem(String type){
-        if(validItem(type)) return null;
         return getDefaultItems().stream().filter(item -> item.getType().equalsIgnoreCase(type)).findFirst().get();
     }
 
@@ -60,15 +58,13 @@ public class PlotStorage {
         });
     }
 
-    public boolean validItem(String material){
-        return plugin.getConfig().getConfigurationSection("Itens").getKeys(false).contains(material);
-    }
 
     public HashMap<Player, Integer> getActionBarMessage() {
         return actionBarMessage;
     }
 
     public void addToStorage(UUID plotId, String material, int amount) {
+        System.out.println("Adicionando ao storage da plot ["+plotId+"] o material "+material);
         PlotItem plotItem = getPlotItems(plotId).stream().filter(p -> p.getType().equals(material)).findFirst().get();
         plotItem.add(amount);
     }

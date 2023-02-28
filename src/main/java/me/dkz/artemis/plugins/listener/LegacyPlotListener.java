@@ -27,19 +27,20 @@ public class LegacyPlotListener implements Listener {
 
         ItemStack stack = e.getEntity().getItemStack();
         String material = stack.getType().toString().toUpperCase();
-        if (plotStorage.validItem(material)) return;
+        if (plotStorage.getPlotItem(material) == null) return;
         Location location = e.getLocation();
         if (plotAPI.getPlot(location) == null) return;
         Plot plot = plotAPI.getPlot(location);
         if (!plot.hasOwner()) return;
-
+        System.out.println("Has owner");
         int amount = stack.getAmount();
 
         UUID plotId = plot.getOwners().stream().findFirst().get();
         PlotItem plotItem = plotStorage.getPlotItem(material);
-        if(plugin.getConfig().getBoolean("ActionBar.Ativo")) sendActionText(plot, plotItem, amount);
         plotStorage.addToStorage(plotId, material, amount);
         e.setCancelled(true);
+        if(plugin.getConfig().getBoolean("ActionBar.Ativo")) {sendActionText(plot, plotItem, amount);}
+
 
     }
 
@@ -53,7 +54,7 @@ public class LegacyPlotListener implements Listener {
                         .replaceAll("@quantidade", String.valueOf(amount))
                         .replaceAll("@item", plotItem.getName())
                         .replaceAll("&", "§");
-                ActionBarAPI.sendMessage(player, message);
+               ActionBarAPI.sendMessage(player, message);
             }
         });
     }

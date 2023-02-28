@@ -1,7 +1,3 @@
-ActionBar:
-  Ativo: true
-  Mensagem: "&b[Armazem] &e@quatindadex @item adicionados ao armazem"
-
 Itens:
   CACTUS:
     Nome: "&aCacto"
